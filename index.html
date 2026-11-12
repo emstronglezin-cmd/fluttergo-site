@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Flutter Go — l'expérience Expo Go pour Flutter. Hot Reload automatique sur vos appareils, sans câble, en équipe. Téléchargez l'installateur Windows officiel v0.8.1.">
+  <title>Flutter Go · Le mobile, sans l'attente — Téléchargement v0.8.1</title>
+  <style>
+    :root{
+      --navy:#102040; --navy-2:#1a2c52; --ink:#e8ecf5; --muted:#a8b4d0;
+      --amber:#ffb020; --amber-2:#e09a00; --ok:#3ddc84; --line:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--navy);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.55}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(16,32,64,.92);backdrop-filter:blur(8px);z-index:10}
+    .brand{font-weight:800;letter-spacing:.08em;font-size:1.05rem;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+    .brand .mark{background:var(--amber);color:var(--navy);border-radius:8px;padding:2px 9px;font-weight:900}
+    .brand .accent{color:var(--amber)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:.95rem}
+    nav a:hover{color:var(--amber)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;padding:70px 6vw 60px;max-width:1200px;margin:0 auto}
+    .eyebrow{color:var(--amber);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+    h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.08;font-weight:800}
+    h1 em{font-style:normal;color:var(--amber)}
+    .lede{margin:22px 0 30px;font-size:1.15rem;color:var(--muted);max-width:34rem}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--navy);font-weight:800;text-decoration:none;padding:14px 26px;border-radius:10px;font-size:1.05rem;border:none;transition:transform .15s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .fineprint{margin-top:14px;color:var(--muted);font-size:.82rem}
+    .panel{background:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+    .panel .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ok);margin-right:8px}
+    .panel .panel-head{color:var(--muted);font-size:.8rem;letter-spacing:.1em;margin-bottom:16px}
+    .term{font-family:'Cascadia Code','Consolas',monospace;font-size:.86rem;background:#0a1428;border-radius:10px;padding:18px}
+    .term p{margin:6px 0;color:#cdd6ea}
+    .term .ok{color:var(--ok)}
+    .term .hot{color:var(--amber)}
+    .section{max-width:1100px;margin:0 auto;padding:56px 6vw}
+    h2{font-size:clamp(1.5rem,3vw,2.3rem);font-weight:800;margin-bottom:10px}
+    h2 em{font-style:normal;color:var(--amber)}
+    .sub{color:var(--muted);margin-bottom:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:22px}
+    .card .num{color:var(--amber);font-family:monospace;font-size:.8rem}
+    .card h3{margin:8px 0;font-size:1.1rem}
+    .card p{color:var(--muted);font-size:.95rem}
+    .dl{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+    .dl-card{background:#0a1428;border:1px solid var(--amber);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px}
+    .dl-card h3{font-size:1.2rem}
+    .dl-card .size{color:var(--muted);font-size:.85rem}
+    .dl-card .hash{font-family:monospace;font-size:.68rem;color:var(--muted);word-break:break-all;background:var(--navy);padding:8px;border-radius:8px}
+    .dl-card .hash b{color:var(--amber)}
+    code.inline{background:var(--navy-2);padding:2px 8px;border-radius:6px;font-size:.9em;color:var(--amber)}
+    .check-block{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:18px;font-family:monospace;font-size:.85rem;overflow-x:auto;white-space:pre;color:#cdd6ea}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th{background:var(--amber);color:var(--navy);text-align:left;padding:10px 14px;font-size:.9rem}
+    td{border-bottom:1px solid var(--line);padding:10px 14px;color:var(--muted);font-size:.92rem}
+    code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:4px}
+    footer{border-top:1px solid var(--line);padding:28px 6vw;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+    footer a{color:var(--muted)}
+    .badge{display:inline-block;background:var(--amber);color:var(--navy);border-radius:999px;font-size:.7rem;font-weight:800;padding:2px 10px;vertical-align:middle;margin-left:8px;letter-spacing:.06em}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.dl{grid-template-columns:1fr}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="#"><span class="mark">FG</span><span>FLUTTER<span class="accent">GO</span></span></a>
+    <nav>
+      <a href="#features">Fonctions</a>
+      <a href="#telecharger">Télécharger</a>
+      <a href="#faq">FAQ</a>
+      <a href="downloads/FlutterGo-Manuel-v0.8.1.pdf">Manuel PDF</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Flutter Go · v0.8.1 · Open Source / MIT</p>
+      <h1>Le mobile.<br><em>Sans l’attente.</em></h1>
+      <p class="lede">L’expérience « Expo Go » pour Flutter : Hot Reload automatique dès la sauvegarde, sans fil, sur un ou plusieurs appareils — et toute votre équipe sur le même téléphone partagé.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#telecharger">Télécharger pour Windows ↓</a>
+        <a class="btn secondary" href="downloads/FlutterGo-Manuel-v0.8.1.pdf">Manuel d’installation (PDF)</a>
+      </div>
+      <p class="fineprint">Installateur officiel v0.8.1 · SHA-256 publiés · Licence MIT · © 2026</p>
+    </div>
+    <div class="panel" aria-hidden="true">
+      <p class="panel-head"><span class="dot"></span>SESSION ACTIVE</p>
+      <div class="term">
+        <p>$ fluttergo run --all</p>
+        <p class="ok">✓ Pixel 8 — connected / wifi</p>
+        <p class="ok">✓ iPhone 15 — attached / lan</p>
+        <p class="hot">⚡ hot reload — 184 ms</p>
+        <p>$ fluttergo share</p>
+        <p>QR code affiché · scannez pour installer l’APK</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <p class="eyebrow">Fonctions principales</p>
+    <h2>Tout ce qui rapproche<br>l’idée de <em>l’écran.</em></h2>
+    <p class="sub">Flutter Go pilote le SDK Flutter officiel — aucune surcouche opaque, aucun fork.</p>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><h3>Hot Reload automatique</h3><p>Chaque sauvegarde de <code>lib/</code> recharge instantanément l’app sur l’appareil. Sur plusieurs appareils à la fois.</p></div>
+      <div class="card"><span class="num">02</span><h3>Zéro câble</h3><p><code>fluttergo wifi</code> bascule le téléphone en mode sans fil. Android 11+ s’appaire même sans câble.</p></div>
+      <div class="card"><span class="num">03</span><h3>Partage par QR code</h3><p><code>fluttergo share</code> compile l’APK et affiche un QR : le téléphone scanne, télécharge, installe.</p></div>
+      <div class="card"><span class="num">04</span><h3>Équipe sur un appareil</h3><p><code>fluttergo host</code> / <code>join</code> : tout le monde itère sur le même téléphone, en temps réel.</p></div>
+      <div class="card"><span class="num">05</span><h3>iPhone depuis Windows</h3><p><code>fluttergo attach</code> — après une installation initiale depuis macOS, itérez depuis Windows.</p></div>
+      <div class="card"><span class="num">06</span><h3>Diagnostic honnête</h3><p><code>fluttergo doctor</code> détecte Flutter, ADB, SDK Android, licences et dit exactement ce qui manque.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="telecharger">
+    <p class="eyebrow">Téléchargement — v0.8.1</p>
+    <h2>Installez-le <em>en 2 minutes.</em></h2>
+    <p class="sub">Windows 10/11 · installation par utilisateur, aucun droit administrateur requis.</p>
+    <div class="dl">
+      <div class="dl-card">
+        <h3>Installateur Windows</h3>
+        <p class="size">FlutterGo-Setup-0.8.1.exe · 4 483 965 octets (~4,5 Mo)</p>
+        <a class="btn" href="downloads/FlutterGo-Setup-0.8.1.exe">Télécharger l’installateur ↓</a>
+        <p class="hash"><b>SHA-256</b><br>de16b10ede860260bb7689718caa9cdf8378307ebf10c3cbb2fa654f8da3006c</p>
+      </div>
+      <div class="dl-card">
+        <h3>Archive portable</h3>
+        <p class="size">FlutterGo-Portable-0.8.1.zip · 3 150 451 octets (~3,2 Mo)</p>
+        <a class="btn secondary" href="downloads/FlutterGo-Portable-0.8.1.zip">Télécharger le ZIP ↓</a>
+        <p class="hash"><b>SHA-256</b><br>6b7661df9664a0f18d5e89a2ffaabd2652694684ad5e641a5fe5199934b1dcd0</p>
+      </div>
+    </div>
+    <div class="check-block"># Vérifier l’intégrité du fichier téléchargé
+certutil -hashfile FlutterGo-Setup-0.8.1.exe SHA256
+
+# Comparer avec SHA256SUMS.txt (ou le cadre ci-dessus)
+# SHA256SUMS.txt : <a href="downloads/SHA256SUMS.txt">downloads/SHA256SUMS.txt</a></div>
+
+    <table>
+      <thead><tr><th>Étape</th><th>Détail</th></tr></thead>
+      <tbody>
+        <tr><td>1. Télécharger</td><td><code>FlutterGo-Setup-0.8.1.exe</code> ci-dessus</td></tr>
+        <tr><td>2. Installer</td><td>Double-clic · aucun droit admin · laisser l’option « Add Flutter Go to PATH » cochée</td></tr>
+        <tr><td>3. Vérifier</td><td>Nouveau terminal : <code>fluttergo --version</code> puis <code>fluttergo doctor</code></td></tr>
+        <tr><td>4. SDK requis</td><td>Flutter + Android SDK sur le PC (Flutter Go ne les remplace pas — <code>fluttergo doctor</code> vous dit quoi installer)</td></tr>
+      </tbody>
+    </table>
+    <p class="fineprint">SmartScreen peut afficher un avertissement : le binaire n’est pas signé EV (projet open source sans certificat commercial). Vérifiez le SHA-256 avant d’exécuter. Les sources sont MIT — <a href="LICENSE" style="color:var(--amber)">voir la licence</a>.</p>
+  </section>
+
+  <section class="section" id="faq">
+    <p class="eyebrow">FAQ</p>
+    <h2>Questions <em>honnêtes.</em></h2>
+    <div class="card" style="margin-bottom:12px"><h3>Est-ce gratuit ?</h3><p>Oui : Flutter Go est open source (MIT) et restera gratuit pour les fonctions CLI. Un futur abonnement « Pro » (outils d’équipe avancés) est en préparation, sans date d’engagement.</p></div>
+    <div class="card" style="margin-bottom:12px"><h3>Est-ce un fork de Flutter ?</h3><p>Non. Flutter Go pilote le SDK Flutter officiel (<code>flutter run --machine</code>). Il ne remplace ni Flutter, ni Android Studio, ni Xcode.</p></div>
+    <div class="card" style="margin-bottom:12px"><h3>iPhone depuis Windows ?</h3><p>Après une installation initiale depuis macOS (contrainte Apple), oui : <code>fluttergo attach</code> donne le Hot Reload depuis Windows au quotidien.</p></div>
+    <div class="card"><h3>Où sont les sources ?</h3><p>Le dépôt de développement est privé pendant la phase pré-lancement. La licence MIT sera honorée : les sources publiques seront publiées avec la v1.0.</p></div>
+  </section>
+
+  <footer>
+    <span>© 2026 Flutter Go — licence MIT · <a href="LICENSE">LICENSE</a></span>
+    <span><a href="downloads/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="downloads/FlutterGo-Manuel-v0.8.1.pdf">Manuel PDF</a></span>
+    <span>Statut : pré-lancement · aucune donnée personnelle collectée par ce site</span>
+  </footer>
+</body>
+</html>
