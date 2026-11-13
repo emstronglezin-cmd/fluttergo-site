@@ -1,2 +1,2 @@
-6b7661df9664a0f18d5e89a2ffaabd2652694684ad5e641a5fe5199934b1dcd0  FlutterGo-Portable-0.8.1.zip
-de16b10ede860260bb7689718caa9cdf8378307ebf10c3cbb2fa654f8da3006c  FlutterGo-Setup-0.8.1.exe
+457fae7dfa8b8648bd3f9fb7f1d0de8c2be4477bc6a33e1cf2e5613b81337f73  FlutterGo-Portable-0.8.2.zip
+59480a4a9ed15a28481a6a0ee99fd9b3b3c64afdd95cbc2c144545bc3c1e1922  FlutterGo-Setup-0.8.2.exe
